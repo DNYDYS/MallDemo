@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.mall.tiny.mbg.mapper.UserMapper">
+<select id="selectAll" resultType="com.macro.mall.tiny.mbg.model.User">
+    SELECT
+        A.*,
+        B.department_name,
+        B.`level`,
+        B.parent_id
+    FROM
+        t_user A
+            LEFT JOIN t_department B ON A.department_id = B.department_id
+    where user_id = 1
+</select>
+
+</mapper>
